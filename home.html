@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://code.jquery.com/jquery-3.6.1.js"
       integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -13,5 +19,42 @@
     <script src="app.js"></script>
     <title>Jacob Curry's Portfolio</title>
   </head>
-  <body></body>
+  <body>
+    <div class="main-container">
+      <div class="header-container">
+        <nav class="nav-bar hidden">
+          <a class="nav about-html" href="#">About</a>
+          <a class="nav bio-html" href="bio.html">Background</a>
+          <a class="nav resume.html" href="resume.html">Resume</a>
+          <a class="nav projects-html" href="projects.html">Projects</a>
+        </nav>
+        <button class="hamburger">☰</button>
+      </div>
+      <div class="image-container">
+        <img
+          class="portfolio-img"
+          src="portfolio-img (1).png"
+          alt="Picture Of Me"
+        />
+      </div>
+      <div class="text-container">
+        <h1 class="about-text">Hello, I am Jacob Curry</h1>
+        <h2 class="about-text">Aspiring Full Stack Software Engineer</h2>
+        <a
+          href="https://www.linkedin.com/in/jacobcurry27/"
+          target="_blank"
+          class="linkedin social"
+        >
+          <img src="" alt="LinkedIn" />
+        </a>
+        <a
+          href="https://github.com/jacobcurry"
+          target="_blank"
+          class="github social"
+        >
+          <img src="" alt="Github" />
+        </a>
+      </div>
+    </div>
+  </body>
 </html>

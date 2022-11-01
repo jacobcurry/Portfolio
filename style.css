@@ -1,0 +1,61 @@
+body,
+html {
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  font-family: "Mukta", sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(portfolio-bg-img.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid white;
+  filter: brightness(100%);
+  box-shadow: 10px 10px 10px black;
+}
+
+.text-container {
+  text-align: center;
+  font-size: 1em;
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1em;
+}
+
+.hamburger {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+}
+
+.nav {
+  color: white;
+  text-decoration: none;
+  padding: 0 1em 0em 1em;
+}
+
+.nav:hover {
+  background-color: black;
+}
+
+.social {
+  text-decoration: none;
+  color: white;
+  padding: 0em 1em 0em 1em;
+}
