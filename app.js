@@ -21,4 +21,12 @@ const changeHello = () => {
   }
 };
 const intervalId = window.setInterval(changeHello, 400);
+
+const headerDropDown = () => {
+  $(".home-html").slideDown("slow");
+  $(".bio-html").slideDown("slow");
+  $(".resume-html").slideDown("slow");
+  $(".projects-html").slideDown("slow");
+};
+
 $(() => {});
