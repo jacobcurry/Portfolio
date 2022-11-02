@@ -107,9 +107,6 @@ html {
     margin: auto;
     text-align: center;
   }
-  .hidden {
-    display: none;
-  }
 }
 
 @media (max-width: 400px) {
@@ -118,7 +115,7 @@ html {
   }
 }
 
-.about-text-container {
+.resume-container {
   display: flex;
   flex-flow: column nowrap;
   width: 50%;
@@ -128,25 +125,63 @@ html {
   background-color: lightgray;
   color: black;
   font-size: 1em;
-  padding: 1em;
 }
 
-.about-button-container {
+.resume-education-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 1em 2em;
+}
+
+li {
+  list-style-type: circle;
+  text-align: left;
+}
+
+.resume-button-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.resume-button {
+  width: 100%;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 2em 2em;
+}
+
+.resume-button:hover {
+  color: black;
+  background-color: white;
+}
+
+.slideshow-button-container {
   display: flex;
   justify-content: space-between;
+  text-align: center;
 }
 
-.previous-button,
-.next-button {
+.back-button,
+.forward-button {
   font-size: 2em;
   border: none;
   color: black;
   background-color: lightgray;
   cursor: pointer;
+  justify-content: space-between;
 }
 
-.previous-button:hover,
-.next-button:hover {
+.back-button:hover,
+.forward-button:hover {
   background-color: black;
   color: white;
+}
+.hidden {
+  display: none;
 }

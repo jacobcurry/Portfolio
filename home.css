@@ -62,10 +62,24 @@ html {
   color: #667e82;
 }
 
+.button-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
 .social {
   text-decoration: none;
+  background-color: black;
   color: white;
   padding: 0em 1em 0em 1em;
+  font-size: 1.2em;
+  width: 20%;
+  margin: 1em;
+}
+
+.social:hover {
+  background-color: white;
+  color: black;
 }
 
 .hidden {
