@@ -77,15 +77,10 @@ html {
     align-items: center;
     padding: 1em 2em;
   }
-
-  .hidden {
-    display: none;
-  }
 }
 
-@media (max-width: 400px) {
-  .about-text {
-    padding: 0 0.2em;
+@media (max-height: 700px) {
+  .about-main-container {
   }
 }
 

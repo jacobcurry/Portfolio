@@ -106,9 +106,8 @@ html {
     flex-flow: column nowrap;
     margin: auto;
     text-align: center;
-  }
-  .hidden {
-    display: none;
+    align-items: center;
+    justify-content: center;
   }
 }
 
