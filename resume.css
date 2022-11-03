@@ -87,7 +87,7 @@ html {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-end;
-    height: 100vh;
+    height: 100%;
   }
 
   .header-container {
@@ -101,11 +101,8 @@ html {
     padding: 1em 2em;
   }
 
-  .body-container {
-    display: flex;
-    flex-flow: column nowrap;
-    margin: auto;
-    text-align: center;
+  .resume-container {
+    width: 75%;
   }
 }
 
@@ -135,6 +132,22 @@ html {
   padding: 1em 2em;
 }
 
+.resume-work-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 1em 2em;
+}
+
+.resume-skills-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 1em 2em;
+}
+
 li {
   list-style-type: circle;
   text-align: left;
@@ -144,25 +157,33 @@ li {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   width: 100%;
 }
 
 .resume-button {
+  font-size: 1em;
   width: 100%;
   border: none;
+  padding: 1em 2em;
   background-color: black;
+  opacity: 0.8;
   color: white;
-  padding: 2em 2em;
 }
 
 .resume-button:hover {
-  color: black;
-  background-color: white;
+  color: white;
+  opacity: 0.4;
+  background-color: black;
 }
 
+.resume-button-style {
+  color: #667e82;
+  text-decoration: underline;
+}
 .slideshow-button-container {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   text-align: center;
 }

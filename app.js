@@ -33,47 +33,145 @@ const currentNavColor = () => {
 };
 
 //carousell (if that is how you spell it) for about me page.
-let currentDiv = 1;
-const nextButton = () => {
+let currentDivAbout = 1;
+const nextButtonAbout = () => {
   let numOfDivs = $(".about-main-container").children().length - 1;
   $(".about-main-container")
     .children()
-    .eq(currentDiv)
+    .eq(currentDivAbout)
     .addClass("hidden")
     .removeClass("about-text-container");
-  if (currentDiv < numOfDivs) {
-    currentDiv++;
+  if (currentDivAbout < numOfDivs) {
+    currentDivAbout++;
   } else {
-    currentDiv = 1;
+    currentDivAbout = 1;
   }
   $(".about-main-container")
     .children()
-    .eq(currentDiv)
+    .eq(currentDivAbout)
     .addClass("about-text-container")
     .removeClass("hidden");
 };
-const previousButton = () => {
+const previousButtonAbout = () => {
   let numOfDivs = $(".about-main-container").children().length - 1;
   $(".about-main-container")
     .children()
-    .eq(currentDiv)
+    .eq(currentDivAbout)
     .addClass("hidden")
     .removeClass("about-text-container");
-  if (currentDiv > 1) {
-    currentDiv--;
+  if (currentDivAbout > 1) {
+    currentDivAbout--;
   } else {
-    currentDiv = numOfDivs;
+    currentDivAbout = numOfDivs;
   }
   $(".about-main-container")
     .children()
-    .eq(currentDiv)
+    .eq(currentDivAbout)
     .addClass("about-text-container")
     .removeClass("hidden");
+};
+
+//carousell buttons for resume section.
+let currentDivResume = 0;
+const forwardButtonResume = (divContainer) => {
+  let numOfDivs = $(divContainer).length - 1;
+  $(divContainer).eq(currentDivResume).addClass("hidden");
+  if (currentDivResume < numOfDivs) {
+    currentDivResume++;
+  } else {
+    currentDivResume = 0;
+  }
+  $(divContainer).eq(currentDivResume).removeClass("hidden");
+};
+const backButtonResume = (divContainer) => {
+  let numOfDivs = $(divContainer).length - 1;
+  $(divContainer).eq(currentDivResume).addClass("hidden");
+  if (currentDivResume > 0) {
+    currentDivResume--;
+  } else {
+    currentDivResume = numOfDivs;
+  }
+  $(divContainer).eq(currentDivResume).removeClass("hidden");
+};
+
+const educationButtonClick = () => {
+  const resumeButton = $(".resume-button-container");
+  const educationContainer = $(".resume-education-container");
+  const workContainer = $(".resume-work-container");
+  const skillsContainer = $(".resume-skills-container");
+  for (let i = 0; i < resumeButton.children().length; i++) {
+    resumeButton.children().eq(i).removeClass("resume-button-style");
+  }
+  resumeButton.children().eq(0).addClass("resume-button-style");
+  workContainer.addClass("hidden");
+  skillsContainer.addClass("hidden");
+  educationContainer.eq(0).removeClass("hidden");
+};
+
+const workButtonClick = () => {
+  const educationContainer = $(".resume-education-container");
+  const workContainer = $(".resume-work-container");
+  const skillsContainer = $(".resume-skills-container");
+  const resumeButton = $(".resume-button-container");
+  for (let i = 0; i < resumeButton.children().length; i++) {
+    resumeButton.children().eq(i).removeClass("resume-button-style");
+  }
+  resumeButton.children().eq(1).addClass("resume-button-style");
+  educationContainer.addClass("hidden");
+  skillsContainer.addClass("hidden");
+  workContainer.eq(0).removeClass("hidden");
+};
+
+const skillsButtonClick = () => {
+  const educationContainer = $(".resume-education-container");
+  const workContainer = $(".resume-work-container");
+  const skillsContainer = $(".resume-skills-container");
+  const resumeButton = $(".resume-button-container");
+  for (let i = 0; i < resumeButton.children().length; i++) {
+    resumeButton.children().eq(i).removeClass("resume-button-style");
+  }
+  resumeButton.children().eq(2).addClass("resume-button-style");
+  educationContainer.addClass("hidden");
+  workContainer.addClass("hidden");
+  skillsContainer.eq(0).removeClass("hidden");
 };
 
 $(() => {
+  //nav bar colors
   currentNavColor();
+  //about section buttons
+  $(".next-button").on("click", nextButtonAbout);
+  $(".previous-button").on("click", previousButtonAbout);
+  //resume section buttons click
+  $(".resume-button-container")
+    .children()
+    .eq(0)
+    .on("click", educationButtonClick);
+  $(".resume-button-container").children().eq(1).on("click", workButtonClick);
+  $(".resume-button-container").children().eq(2).on("click", skillsButtonClick);
 
-  $(".next-button").on("click", nextButton);
-  $(".previous-button").on("click", previousButton);
+  //education section back and forward buttons click
+  $(".forward-button-education").on("click", () => {
+    forwardButtonResume($(".resume-education-container"));
+  });
+  $(".back-button-education").on("click", () => {
+    backButtonResume($(".resume-education-container"));
+  });
+
+  //work section back and forward buttons click
+  $(".forward-button-work").on("click", () => {
+    forwardButtonResume($(".resume-work-container"));
+  });
+  $(".back-button-work").on("click", () => {
+    backButtonResume($(".resume-work-container"));
+  });
+
+  //skills section back and forward buttons click
+  //commented out because there is only one div on there right now
+  // $(".forward-button-skills").on("click", () => {
+  //   forwardButtonResume($(".resume-skills-container"));
+  // });
+  // $(".back-button-skills").on("click", () => {
+  //   backButtonResume($(".resume-skills-container"));
+  // });
 });
