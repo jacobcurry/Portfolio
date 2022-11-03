@@ -69,12 +69,12 @@ html {
 }
 .social {
   text-decoration: none;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 0em 1em 0em 1em;
   font-size: 1.2em;
-  width: 20%;
   margin: 1em;
+  width: 15%;
 }
 
 .social:hover {
@@ -84,6 +84,10 @@ html {
 
 .hidden {
   display: none;
+}
+
+.about-textH1 {
+  width: 100%;
 }
 
 .about-text {
