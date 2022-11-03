@@ -93,6 +93,9 @@ html {
   background-color: lightgray;
   color: black;
   font-size: 1em;
+  height: 75vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .resume-education-container {
@@ -199,7 +202,6 @@ li {
     margin: auto;
     text-align: center;
     align-items: center;
-    justify-content: center;
     width: 75%;
     margin: 1em;
   }
