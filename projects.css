@@ -47,10 +47,12 @@ html {
 
 .project-container {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: wrap;
   margin: 0 auto;
   padding: 0;
-  max-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
 }
 
 .div-row-one {
@@ -64,7 +66,7 @@ html {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
-  margin: 2em auto 0 auto;
+  margin: 2em auto 1em auto;
   padding: 0;
 }
 
@@ -81,7 +83,8 @@ html {
 }
 
 .project-div > p,
-.project-div > h3 {
+.project-div > h3,
+.project-div > a {
   background-color: white;
   color: black;
   margin: 0;
@@ -89,7 +92,12 @@ html {
 .project-div > p {
   background-color: white;
   color: black;
-  margin-bottom: 2em;
+}
+.project-div > a {
+  text-decoration: none;
+  margin: 0;
+  color: #667e82;
+  min-width: 100%;
 }
 @media (max-width: 700px) {
   .main {
@@ -113,9 +121,12 @@ html {
 
   .project-container {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: wrap;
     margin: 0 auto;
     padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
   }
 
   .div-row-one {
