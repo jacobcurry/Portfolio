@@ -97,6 +97,7 @@ body {
   color: #667e82;
   min-width: 100%;
 }
+
 @media (max-width: 700px) {
   .main {
     display: flex;
@@ -143,6 +144,10 @@ body {
   .project-div {
     width: 50%;
     margin: 2em auto;
+  }
+
+  .project4 {
+    margin-bottom: 10em;
   }
 
   .hidden {

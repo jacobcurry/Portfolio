@@ -74,7 +74,6 @@ html {
   padding: 0em 1em 0em 1em;
   font-size: 1.2em;
   margin: 1em;
-  width: 15%;
 }
 
 .social:hover {
@@ -126,6 +125,10 @@ html {
     text-align: center;
     align-items: center;
     justify-content: center;
+  }
+
+  .social {
+    text-align: center;
   }
 }
 
