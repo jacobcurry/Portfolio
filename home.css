@@ -9,7 +9,8 @@ body {
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .main {
@@ -158,6 +159,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 2em;
+    margin-bottom: 10em;
   }
 
   .social {
