@@ -191,8 +191,12 @@ body {
     margin: 0 auto;
   }
 
+  .project1 {
+    margin-top: 5em;
+  }
+
   .project4 {
-    margin-bottom: 20em;
+    margin-bottom: 40em;
   }
 
   .hidden {
