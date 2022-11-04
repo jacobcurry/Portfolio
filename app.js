@@ -54,7 +54,7 @@ const openHamburgerNavHeigth = () => {
       clearInterval(slideNav);
     }
     num++;
-  }, 30);
+  }, 10);
 };
 //closes nav on click of hamburgerif pixels are less than 700
 const closeHamburgerNavHeight = () => {
@@ -70,19 +70,7 @@ const closeHamburgerNavHeight = () => {
       clearInterval(slideNav);
     }
     num--;
-  }, 30);
-};
-
-const resizeWindowHamburgerNav = () => {
-  if ($(window).width() > 700) {
-    $(".openNav").on("click", openHamburgerNavWidth);
-    $(".closeNav").on("click", closeHamburgerNavWidth);
-    console.log("hi");
-  } else {
-    $(".openNav").on("click", openHamburgerNavHeigth);
-    $(".closeNav").on("click", closeHamburgerNavHeight);
-    console.log("hello");
-  }
+  }, 10);
 };
 
 //carousell (if that is how you spell it) for about me page.
@@ -199,16 +187,6 @@ $(() => {
     $aboutText.text(aboutString.slice(0, aboutNum));
     if (aboutNum === aboutString.length) {
       clearInterval(printAboutText);
-      aboutNum = 0;
-      setInterval(() => {
-        if (aboutNum === 0) {
-          $aboutText.text(aboutString + "_");
-          aboutNum = 1;
-        } else {
-          $aboutText.text(aboutString);
-          aboutNum = 0;
-        }
-      }, 500);
     }
   }, 150);
 
@@ -262,6 +240,20 @@ $(() => {
       closeHamburgerNavWidth();
     } else {
       closeHamburgerNavHeight();
+    }
+  });
+
+  $(window).resize(() => {
+    if ($(window).width() > 685) {
+      $(".header-container").css({
+        width: "15%",
+        height: "100vh",
+      });
+    } else {
+      $(".header-container").css({
+        width: "100%",
+        height: "50%",
+      });
     }
   });
 });
