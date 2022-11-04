@@ -7,8 +7,86 @@ const currentNavColor = () => {
   }
 };
 
+//opens nav on click of hamburgerif pixels are greater than 700
+const openHamburgerNavWidth = () => {
+  let num = 0;
+  $(".closeNav").removeClass("hidden");
+  $(".openNav").addClass("hidden");
+  const slideNav = setInterval(() => {
+    $(".header-container").css({ width: num + "%" });
+    if (num === 15) {
+      $(".nav").css({
+        display: "flex",
+      });
+      clearInterval(slideNav);
+    }
+    num++;
+  }, 15);
+};
+//closes nav on click of hamburger if pixels are greater than 700
+const closeHamburgerNavWidth = () => {
+  let num = 15;
+  $(".closeNav").addClass("hidden");
+  $(".nav").css({
+    display: "none",
+  });
+  const slideNav = setInterval(() => {
+    $(".header-container").css({ width: num + "%" });
+    if (num === 0) {
+      $(".openNav").removeClass("hidden");
+      clearInterval(slideNav);
+    }
+    num--;
+  }, 15);
+};
+
+//opens nav on click of hamburger if pixels are less than 700
+const openHamburgerNavHeigth = () => {
+  let num = 0;
+  $(".closeNav").removeClass("hidden");
+  $(".openNav").addClass("hidden");
+  const slideNav = setInterval(() => {
+    $(".header-container").css({ height: num + "%" });
+    if (num === 50) {
+      $(".nav").css({
+        display: "flex",
+      });
+      clearInterval(slideNav);
+    }
+    num++;
+  }, 30);
+};
+//closes nav on click of hamburgerif pixels are less than 700
+const closeHamburgerNavHeight = () => {
+  let num = 50;
+  $(".closeNav").addClass("hidden");
+  $(".nav").css({
+    display: "none",
+  });
+  const slideNav = setInterval(() => {
+    $(".header-container").css({ height: num + "%" });
+    if (num === 0) {
+      $(".openNav").removeClass("hidden");
+      clearInterval(slideNav);
+    }
+    num--;
+  }, 30);
+};
+
+const resizeWindowHamburgerNav = () => {
+  if ($(window).width() > 700) {
+    $(".openNav").on("click", openHamburgerNavWidth);
+    $(".closeNav").on("click", closeHamburgerNavWidth);
+    console.log("hi");
+  } else {
+    $(".openNav").on("click", openHamburgerNavHeigth);
+    $(".closeNav").on("click", closeHamburgerNavHeight);
+    console.log("hello");
+  }
+};
+
 //carousell (if that is how you spell it) for about me page.
-let currentDivAbout = 1;
+let currentDivAbout = 2;
 const nextButtonAbout = () => {
   let numOfDivs = $(".about-main-container").children().length - 1;
   $(".about-main-container")
@@ -19,7 +97,7 @@ const nextButtonAbout = () => {
   if (currentDivAbout < numOfDivs) {
     currentDivAbout++;
   } else {
-    currentDivAbout = 1;
+    currentDivAbout = 2;
   }
   $(".about-main-container")
     .children()
@@ -34,7 +112,7 @@ const previousButtonAbout = () => {
     .eq(currentDivAbout)
     .addClass("hidden")
     .removeClass("about-text-container");
-  if (currentDivAbout > 1) {
+  if (currentDivAbout > 2) {
     currentDivAbout--;
   } else {
     currentDivAbout = numOfDivs;
@@ -171,4 +249,19 @@ $(() => {
   // $(".back-button-skills").on("click", () => {
   //   backButtonResume($(".resume-skills-container"));
   // });
+
+  $(".openNav").on("click", () => {
+    if ($(window).width() > 700) {
+      openHamburgerNavWidth();
+    } else {
+      openHamburgerNavHeigth();
+    }
+  });
+  $(".closeNav").on("click", () => {
+    if ($(window).width() > 700) {
+      closeHamburgerNavWidth();
+    } else {
+      closeHamburgerNavHeight();
+    }
+  });
 });

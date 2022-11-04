@@ -1,31 +1,22 @@
-body,
-html {
+body {
   margin: 0 auto;
   background-color: black;
   color: white;
   font-family: "Mukta", sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(portfolio-bg-img.jpeg);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(backgroundimg2.jpeg);
   background-attachment: fixed;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .main {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-}
-
-.portfolio-img {
-  text-align: center;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid white;
-  filter: brightness(100%);
-  box-shadow: 10px 10px 10px black;
 }
 
 .body-container {
@@ -36,7 +27,8 @@ html {
 }
 
 .header-container {
-  background-color: black;
+  background-color: white;
+  opacity: 0.9;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
@@ -46,21 +38,42 @@ html {
 }
 
 .hamburger {
-  display: none;
-  margin: 1em;
-  background-color: black;
+  color: #f4b942;
   border: none;
-  color: white;
-  font-size: 1.5em;
+  background-color: transparent;
+  font-size: 3em;
+}
+.hamburger:hover {
+  color: #a07178;
+  border: none;
+  background-color: transparent;
+  font-size: 3em;
+}
+
+.openNav {
+  background-color: white;
+  position: absolute;
+  top: 11.5%;
+  left: 4.5%;
+  border: 1px solid #f4b942;
+  border-radius: 5px;
+}
+
+.openNav:hover {
+  color: #a07178;
+  background-color: white;
+  border: 1px solid #f4b942;
+  border-radius: 5px;
 }
 
 .nav {
-  color: white;
+  color: #f4b942;
   text-decoration: none;
+  font-size: 1.5em;
 }
 
 .nav:hover {
-  color: #667e82;
+  color: #a07178;
 }
 
 .social {
@@ -79,7 +92,7 @@ html {
 
 .current {
   font-size: 1.5em;
-  color: #667e82;
+  color: #570000;
   text-decoration: underline;
 }
 
@@ -89,8 +102,9 @@ html {
   width: 50%;
   text-align: center;
   margin: auto;
-  border: 3px solid black;
-  background-color: lightgray;
+  border: 3px solid #a07178;
+  background-color: white;
+  opacity: 0.9;
   color: black;
   font-size: 1em;
   height: 75vh;
@@ -140,17 +154,16 @@ li {
   width: 100%;
   border: none;
   padding: 1em 2em;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #f4b942;
 }
 
 .resume-button:hover {
-  color: black;
-  background-color: gray;
+  color: #a07178;
 }
 
 .resume-button-style {
-  color: #667e82;
+  color: #570000;
   text-decoration: underline;
 }
 .slideshow-button-container {
@@ -164,16 +177,15 @@ li {
 .forward-button {
   font-size: 2em;
   border: none;
-  color: black;
-  background-color: lightgray;
+  color: #f4b942;
+  background-color: white;
   cursor: pointer;
   justify-content: space-between;
 }
 
 .back-button:hover,
 .forward-button:hover {
-  background-color: black;
-  color: white;
+  color: #a07178;
 }
 
 @media (max-width: 700px) {
@@ -185,15 +197,22 @@ li {
   }
 
   .header-container {
-    background-color: black;
-    position: sticky;
+    background-color: white;
     width: 100%;
-    height: 7%;
+    height: 50%;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: space-evenly;
     align-items: center;
-    padding: 1em 2em;
+    padding: 0em 2em;
+    margin-bottom: 1em;
+  }
+  .openNav {
+    position: static;
+    background-color: white;
+    width: 100%;
+    border: 1px solid #f4b942;
+    border-radius: 5px;
   }
 
   .resume-container {

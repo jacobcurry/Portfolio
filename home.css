@@ -1,21 +1,22 @@
-body,
-html {
+body {
   margin: 0 auto;
   background-color: black;
   color: white;
   font-family: "Mukta", sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(portfolio-bg-img.jpeg);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(backgroundimg2.jpeg);
   background-attachment: fixed;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .main {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  overflow: hidden;
 }
 
 .portfolio-img {
@@ -23,9 +24,8 @@ html {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 3px solid white;
-  filter: brightness(100%);
-  box-shadow: 10px 10px 10px black;
+  border: 3px solid #a07178;
+  box-shadow: 5px 5px 10px gray;
 }
 
 .body-container {
@@ -36,7 +36,8 @@ html {
 }
 
 .header-container {
-  background-color: black;
+  background-color: white;
+  opacity: 0.9;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
@@ -46,20 +47,42 @@ html {
 }
 
 .hamburger {
-  margin: 1em;
-  background-color: black;
+  color: #f4b942;
   border: none;
-  color: white;
-  font-size: 1.5em;
+  background-color: transparent;
+  font-size: 3em;
+}
+.hamburger:hover {
+  color: #a07178;
+  border: none;
+  background-color: transparent;
+  font-size: 3em;
+}
+
+.openNav {
+  background-color: white;
+  position: absolute;
+  top: 11.5%;
+  left: 4.5%;
+  border: 1px solid #f4b942;
+  border-radius: 5px;
+}
+
+.openNav:hover {
+  color: #a07178;
+  background-color: white;
+  border: 1px solid #f4b942;
+  border-radius: 5px;
 }
 
 .nav {
-  color: white;
+  color: #f4b942;
   text-decoration: none;
+  font-size: 1.5em;
 }
 
 .nav:hover {
-  color: #667e82;
+  color: #a07178;
 }
 
 .button-container {
@@ -69,8 +92,9 @@ html {
 }
 .social {
   text-decoration: none;
+  border-radius: 5px;
   background-color: white;
-  color: black;
+  color: #f4b942;
   padding: 0em 1em 0em 1em;
   font-size: 1.2em;
   margin: 1em;
@@ -95,7 +119,7 @@ html {
 
 .current {
   font-size: 1.5em;
-  color: #667e82;
+  color: #570000;
   text-decoration: underline;
 }
 
@@ -104,18 +128,26 @@ html {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-end;
-    height: 100vh;
+    height: 100%;
   }
 
   .header-container {
-    background-color: black;
+    background-color: white;
     width: 100%;
-    height: 7%;
+    height: 50%;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: space-evenly;
     align-items: center;
-    padding: 1em 2em;
+    padding: 0em 2em;
+    margin-bottom: 1em;
+  }
+  .openNav {
+    position: static;
+    background-color: white;
+    width: 100%;
+    border: 1px solid #f4b942;
+    border-radius: 5px;
   }
 
   .body-container {
