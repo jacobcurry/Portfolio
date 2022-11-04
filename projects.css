@@ -50,7 +50,8 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .div-row-one {
@@ -98,7 +99,7 @@ body {
   min-width: 100%;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .main {
     display: flex;
     flex-flow: column nowrap;
@@ -147,7 +148,7 @@ body {
   }
 
   .project4 {
-    margin-bottom: 10em;
+    margin-bottom: 20em;
   }
 
   .hidden {
