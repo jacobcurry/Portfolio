@@ -14,6 +14,8 @@ Javascript:
 
 5. Function to print Hello text as a typewriter
 
+6. Change to light mode and dark mode
+
 I unfortunately am not gifted with the ability to design or be creative, so this project was very difficult for me in that regard. I would say I spent 50% of my time trying to make it look decent with colors and fonts and the other 50% actaully building the website.
 
 I believe I was able to solve all the problems I attempted although some of them definelty coulf of been done more DRY.

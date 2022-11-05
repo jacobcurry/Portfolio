@@ -15,7 +15,7 @@ const openHamburgerNavWidth = () => {
   const slideNav = setInterval(() => {
     $(".header-container").css({ width: num + "%" });
     if (num === 15) {
-      $(".nav").css({
+      $(".header-container").children().css({
         display: "flex",
       });
       clearInterval(slideNav);
@@ -27,7 +27,7 @@ const openHamburgerNavWidth = () => {
 const closeHamburgerNavWidth = () => {
   let num = 15;
   $(".closeNav").addClass("hidden");
-  $(".nav").css({
+  $(".header-container").children().css({
     display: "none",
   });
   const slideNav = setInterval(() => {
@@ -48,7 +48,7 @@ const openHamburgerNavHeigth = () => {
   const slideNav = setInterval(() => {
     $(".header-container").css({ height: num + "%" });
     if (num === 50) {
-      $(".nav").css({
+      $(".header-container").children().css({
         display: "flex",
       });
       clearInterval(slideNav);
@@ -60,7 +60,7 @@ const openHamburgerNavHeigth = () => {
 const closeHamburgerNavHeight = () => {
   let num = 50;
   $(".closeNav").addClass("hidden");
-  $(".nav").css({
+  $(".header-container").children().css({
     display: "none",
   });
   const slideNav = setInterval(() => {
@@ -177,6 +177,113 @@ const skillsButtonClick = () => {
   skillsContainer.eq(0).removeClass("hidden");
 };
 
+const changeToDarkMode = () => {
+  $(".dark-mode").addClass("hidden");
+  $(".light-mode").removeClass("hidden");
+
+  $(":root").css({
+    colorScheme: "dark",
+    filter: "brightness(.8) contrast(1.2)",
+  });
+
+  $(".header-container").css({
+    backgroundColor: "black",
+    opacity: "1",
+  });
+  $(".header-container").children().css({
+    color: "lightblue",
+  });
+  $(".current").css({
+    color: "white",
+  });
+  $(".social").css({
+    backgroundColor: "black",
+    color: "lightblue",
+  });
+  $(".portfolio-img").css({
+    border: "3px solid black",
+  });
+  $(".aboutH2").css({
+    color: "lightblue",
+  });
+  $(".previous-button").css({
+    color: "lightblue",
+  });
+  $(".next-button").css({
+    color: "lightblue",
+  });
+  $(".resume-button").css({
+    color: "lightblue",
+  });
+  $(".back-button").css({
+    color: "lightblue",
+  });
+  $(".forward-button").css({
+    color: "lightblue",
+  });
+  $(".projectsH3").css({
+    color: "lightblue",
+  });
+  $(".openNav").css({
+    border: "1px solid black",
+    backgroundColor: "black",
+    color: "lightblue",
+  });
+};
+const changeToLightMode = () => {
+  $(".light-mode").addClass("hidden");
+  $(".dark-mode").removeClass("hidden");
+
+  $(":root").css({
+    colorScheme: "",
+    filter: "",
+  });
+
+  $(".header-container").css({
+    backgroundColor: "",
+    opacity: "",
+  });
+  $(".header-container").children().css({
+    color: "",
+  });
+  $(".social").css({
+    backgroundColor: "",
+    color: "",
+  });
+  $(".portfolio-img").css({
+    border: "",
+  });
+  $(".current").css({
+    color: "",
+  });
+  $(".aboutH2").css({
+    color: "",
+  });
+  $(".previous-button").css({
+    color: "",
+  });
+  $(".next-button").css({
+    color: "",
+  });
+  $(".resume-button").css({
+    color: "",
+  });
+  $(".back-button").css({
+    color: "",
+  });
+  $(".forward-button").css({
+    color: "",
+  });
+  $(".projectsH3").css({
+    color: "",
+  });
+  $(".openNav").css({
+    border: "",
+    backgroundColor: "",
+    color: "",
+  });
+};
+
 $(() => {
   let $aboutText = $(".about-textH1");
   let aboutNum = 0;
@@ -231,8 +338,18 @@ $(() => {
   $(document).ready(() => {
     if ($(window).width() > 700) {
       closeHamburgerNavWidth();
+      if (localStorage.getItem("changeMode") === "light") {
+        changeToLightMode();
+      } else {
+        changeToDarkMode();
+      }
     } else {
       closeHamburgerNavHeight();
+      if (localStorage.getItem("changeMode") === "light") {
+        changeToLightMode();
+      } else {
+        changeToDarkMode();
+      }
     }
   });
 
@@ -262,5 +379,14 @@ $(() => {
     } else {
       closeHamburgerNavHeight();
     }
+  });
+
+  $(".light-mode").on("click", () => {
+    changeToLightMode();
+    localStorage.setItem("changeMode", "light");
+  });
+  $(".dark-mode").on("click", () => {
+    changeToDarkMode();
+    localStorage.setItem("changeMode", "dark");
   });
 });

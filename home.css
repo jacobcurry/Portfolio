@@ -108,6 +108,31 @@ body {
   color: black;
 }
 
+.dark-mode {
+  border: none;
+  font-size: 2em;
+  background-color: transparent;
+  color: #f4b942;
+}
+
+.dark-mode:hover {
+  border: none;
+  font-size: 2em;
+  color: #570000;
+}
+.light-mode {
+  border: none;
+  font-size: 2em;
+  background-color: transparent;
+  color: lightblue;
+}
+
+.light-mode:hover {
+  border: none;
+  font-size: 2em;
+  color: white;
+}
+
 .hidden {
   display: none;
 }
