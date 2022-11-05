@@ -15,8 +15,8 @@ body {
 
 .main {
   display: flex;
-  flex-flow: row wrap;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -31,7 +31,9 @@ body {
 
 .body-container {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   text-align: center;
 }
@@ -124,7 +126,7 @@ body {
   text-decoration: underline;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 715px) {
   .main {
     display: flex;
     flex-flow: column nowrap;
@@ -164,6 +166,9 @@ body {
 
   .social {
     text-align: center;
+  }
+  .hidden {
+    display: none;
   }
 }
 

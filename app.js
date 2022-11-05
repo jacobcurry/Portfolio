@@ -228,6 +228,27 @@ $(() => {
   //   backButtonResume($(".resume-skills-container"));
   // });
 
+  $(document).ready(() => {
+    if ($(window).width() > 700) {
+      closeHamburgerNavWidth();
+    } else {
+      closeHamburgerNavHeight();
+    }
+  });
+
+  $(window).resize(() => {
+    if ($(window).width() > 700) {
+      $(".header-container").css({
+        width: "15%",
+        height: "100vh",
+      });
+    } else {
+      $(".header-container").css({
+        width: "100%",
+        height: "50%",
+      });
+    }
+  });
   $(".openNav").on("click", () => {
     if ($(window).width() > 700) {
       openHamburgerNavWidth();
@@ -240,20 +261,6 @@ $(() => {
       closeHamburgerNavWidth();
     } else {
       closeHamburgerNavHeight();
-    }
-  });
-
-  $(window).resize(() => {
-    if ($(window).width() > 685) {
-      $(".header-container").css({
-        width: "15%",
-        height: "100vh",
-      });
-    } else {
-      $(".header-container").css({
-        width: "100%",
-        height: "50%",
-      });
     }
   });
 });

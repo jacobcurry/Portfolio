@@ -188,7 +188,7 @@ li {
   color: #a07178;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 715px) {
   .main {
     display: flex;
     flex-flow: column nowrap;

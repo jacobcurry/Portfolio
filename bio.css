@@ -129,7 +129,7 @@ body {
   color: #a07178;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 715px) {
   .about-main-container {
     display: flex;
     flex-flow: column nowrap;
@@ -165,5 +165,8 @@ body {
     justify-content: space-between;
     width: 75%;
     margin: 1em;
+  }
+  .hidden {
+    display: none;
   }
 }
